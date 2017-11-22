@@ -1,0 +1,16 @@
+{
+	
+	"environments": {
+		"acs-stage": {
+			"debug-mode": "true",
+			"domain": "https://in.puma.com/",
+			"browser": "chrome",
+			"reportpath": "/reports/",
+			"temp-variable1": null,
+			"temp-variable2": null
+		}
+	},
+	"selenium": {
+		"ElementLocatorTimeOut": "20"
+		}
+}
