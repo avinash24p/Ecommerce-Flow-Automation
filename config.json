@@ -1,7 +1,7 @@
 {
 	
 	"environments": {
-		"acs-stage": {
+		"stage": {
 			"debug-mode": "true",
 			"domain": "https://in.puma.com/",
 			"browser": "chrome",

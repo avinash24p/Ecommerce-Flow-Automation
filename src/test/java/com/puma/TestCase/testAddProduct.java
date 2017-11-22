@@ -1,7 +1,6 @@
 
 package com.puma.TestCase;
 
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +11,6 @@ import org.testng.ITestResult;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -26,7 +24,7 @@ import com.puma.pageObjects.HomePage;
 public class testAddProduct extends TestBaseSetup{
 	private WebDriver driver;
 	private HomePage homePge;
-		
+
 	@BeforeClass
 	private void BeforeClass(){
 		driver = getDriver();	
@@ -34,28 +32,28 @@ public class testAddProduct extends TestBaseSetup{
 		new Log();
 	}
 
-	
-	
-	
+
+
+
 	@Test(testName = "Test Cart page")
 	public void testAddToCart() throws InterruptedException{
-		
+
 		Assert.assertEquals(homePge.getTitle(), "Buy Sports T-Shirts, Tracks, Running Shoes and Accessories Online - in.puma.com");
-		
+
 		Map<String,String> map = new HashMap<String, String>();
 		map=homePge.addProductToCart();
-		
+
 		if(map.size()==0){
 			throw new SkipException("Skipping this exception");
 		}
-		
+
 		Assert.assertTrue(homePge.verifyProduct(map), "Product details verified");
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 	@AfterMethod
 	public void tearDown(ITestResult result) {
 
@@ -63,5 +61,5 @@ public class testAddProduct extends TestBaseSetup{
 			TestFailureCapture.takeScreenShot(result.getTestName(), driver);
 		}
 	}
-	
+
 }
