@@ -1,4 +1,4 @@
-# aceTurtle
+# Ecommerce site flow automation
 
 Please use "mvn surefire:test -Dtest=TestClassName" from terminal to run automation
 
